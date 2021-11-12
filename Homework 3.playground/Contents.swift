@@ -10,13 +10,14 @@ import Foundation
  */
 
 let amount = 500000.00
-let ratePerAnnum = 0.01
+let ratePerAnnum = 0.05
 var period = 5
 var deposit = amount
 for _ in 1...period{
    deposit = deposit + (deposit * ratePerAnnum)
     
 }
+
 var profit = deposit - amount
 print("Amount of income after \(period) years will be \(profit) Eur. My total deposit will be \(deposit) Eur !")
     
@@ -27,7 +28,7 @@ print("Amount of income after \(period) years will be \(profit) Eur. My total de
  Use a % inside the for loop.
  */
 
-var arrayOfInt: [Int] = [1,4,6,7,9,10]
+/*var arrayOfInt: [Int] = [1,4,6,7,9,10]
 var evenNumber = 0
 for number in arrayOfInt{
     if number % 2 == 0{
@@ -35,11 +36,18 @@ for number in arrayOfInt{
     }
 }
 print("My even numbers are: \(evenNumber)")
-
+*/
+var arrayOfInt: [Int] = [1,4,6,7,9,10]
+for number in arrayOfInt{
+    if number % 2 == 0{
+        print("My even numbers are: \(number)")
+    }
+}
 /*
  Exercise 3
  Inside the for loop create randomNumber for the random Int calculation. Calculate and print("Number 5 will be after \(counter) shuffles"). Don't forget to make a break inside the if statement.
  */
+/*
 var counter = 0
 var randomNumber = 0
 for _ in 1...999{
@@ -53,7 +61,14 @@ for _ in 1...999{
     }
 }
 print("Number 5 will be after \(counter) shuffles")
-
+*/
+var counter = 0
+for _ in 1...999{
+   let randomNumber = Int.random(in: 1..<10)
+    counter += 1
+    if randomNumber == 5{
+        print("Number 5 will be after \(counter) shuffles")
+        break
 /*
  Exercise 4
  A bug is climbing to a 10-meter electric post. During the day, bug can climb two meters, during the night she slides down to 1 meter. Determine with the help of the cycle how many days bug will climb on the top of the post. Think about which loop to use in which situation. print("bug will spend \(numberOfDays)) to reach top of the post")
@@ -73,8 +88,41 @@ while true{
             print("Height after \(numberOfNights). night is \(height) m")
     }
     
-    if height == 10{
+    if height >= 10{
         break
     }
 }
 print("bug will spend \(numberOfDays) days to reach top of the post")
+
+var hheight = 0
+var numberDays = 0
+while true{
+    hheight += 2
+    numberDays += 1
+    if hheight >= 10{
+        break
+    }
+    hheight -= 1
+}
+print("bug will spend \(numberOfDays) days to reach top of the post")
+
+var hhheight = 0
+var daysCount = 0
+while hhheight < 10{
+    hhheight += 2
+    daysCount += 1
+    hhheight -= 1
+}
+print("bug will spend \(daysCount) days to reach top of the post")
+/*
+var top = 0
+var day = 0
+while top < 10{
+    top += 2
+    day += 1
+    for _ in 0...1{
+       top -= 1
+    }
+}
+print("\(top) in \(day)")
+*/

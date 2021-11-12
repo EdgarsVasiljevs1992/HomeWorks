@@ -70,13 +70,14 @@ isEvenNumber(4)
 func createArray(from: Int, to: Int) -> [Int]{
     var arrayOfInt: [Int] = []
     for i in from...to{
-        arrayOfInt.append(i)
+        arrayOfInt.append(i) // same as below
+        //arrayOfInt += [i]
     }
-    print(arrayOfInt)
+    //print(arrayOfInt)
     return arrayOfInt
 }
 var myArray = createArray(from: 1, to: 100)
-//createArray(from: 1, to: 100)
+print(myArray)
 
 /*
  Exercise 5
@@ -93,5 +94,11 @@ for number in myArray {
         myArray.remove(at: indexOfNumber)
     }
 }
-
 print("Array without even numbers: \(myArray)")
+
+////2nd var
+//array.removeAll(where: { isEvenNumber($0) })
+//print(array)
+////3rd var
+//let arr = array.filter( {$0 % 2 != 0} )
+//print(arr)
