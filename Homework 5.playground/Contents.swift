@@ -70,11 +70,11 @@ myRectangle.description()
 Declare two numbers.
 Call func 4 times for all calculateResult
 */
-enum CalculationType {
-    case addition
-    case substraction
-    case multiplication
-    case division
+enum CalculationType: String {
+    case addition = "+"
+    case substraction = "-"
+    case multiplication = "*"
+    case division = "/"
 }
 
 func calculateResult(firstNumber numberOne: Int, secondNumber numberTwo: Int, withCalculationType calculationType: CalculationType) ->Int {
@@ -87,7 +87,7 @@ func calculateResult(firstNumber numberOne: Int, secondNumber numberTwo: Int, wi
     case .division: result /= numberTwo
     }
 
-    print("Result:  \(calculationType) \(numberOne) and \(numberTwo) = \(result)")
+    print("Result:  \(calculationType.rawValue) \(numberOne) and \(numberTwo) = \(result)")
     
     return result
 }
