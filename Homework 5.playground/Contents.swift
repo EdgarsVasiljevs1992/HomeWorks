@@ -84,7 +84,7 @@ func calculateResult(firstNumber numberOne: Int, secondNumber numberTwo: Int, wi
     case .addition: result += numberTwo
     case .substraction: result -= numberTwo
     case .multiplication: result *= numberTwo
-    case .division: result /= numberTwo
+    case .division: numberTwo != 0 ? result /= numberTwo : print("Can't value be 0")
     }
 
     print("Result:  \(calculationType.rawValue) \(numberOne) and \(numberTwo) = \(result)")
@@ -94,7 +94,7 @@ func calculateResult(firstNumber numberOne: Int, secondNumber numberTwo: Int, wi
 
 calculateResult(firstNumber: 10, secondNumber: 5, withCalculationType: .addition)
 calculateResult(firstNumber: 4, secondNumber: 3, withCalculationType: .substraction)
-calculateResult(firstNumber: 5, secondNumber: 4, withCalculationType: .multiplication)
+calculateResult(firstNumber: 5, secondNumber: 0, withCalculationType: .multiplication)
 calculateResult(firstNumber: 25, secondNumber: 5, withCalculationType: .division)
 
 /*
