@@ -28,15 +28,10 @@ class ViewController: UIViewController {
                     let cToK = round((slider.value + 273.15) * 100) / 100
                     labelTempOther.text = "\(cToK) °K"
                 }
-            
-        
-        
     }
     
     @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
         sliderValueChanged(slider ?? 0)
     }
-    
-    
 }
 
